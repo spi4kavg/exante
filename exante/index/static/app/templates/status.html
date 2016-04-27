@@ -1,0 +1,34 @@
+<div class="mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell--12-col-desktop">
+        <div class="mdl-shadow--2dp loading-bar">
+            <% if (model.status && model.status.toLowerCase() === 'error') { %>
+                <div class="mdl-grid mdl-grid--no-spacing">
+                    <div class="mdl-cell--2-col-desktop">
+                        <div class="material-icons mdl-color-text--red">close</div>
+                    </div>
+                    <div class="mdl-cell--10-col-desktop">
+                        Не получилось создать дайджест для вас, попробуйте позже.
+                    </div>
+                </div>
+            <% } else if (model.status && model.status.toLowerCase() === 'success') { %>
+                <div class="mdl-grid mdl-grid--no-spacing">
+                    <div class="mdl-cell--2-col-desktop">
+                        <div class="material-icons mdl-color-text--green">done</div>
+                    </div>
+                    <div class="mdl-cell--10-col-desktop">
+                        Мы отправили вам дайджест новостей!
+                    </div>
+                </div>
+            <% } else { %>
+                <div class="mdl-grid mdl-grid--no-spacing">
+                    <div class="mdl-cell--2-col-desktop">
+                        <div class="mdl-spinner mdl-js-spinner is-active"></div>
+                    </div>
+                    <div class="mdl-cell--10-col-desktop">
+                        Подождите пожалуйста, мы как раз подготавливаем для вас дайджест новостей...
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+django==1.9
+librabbitmq==1.6.1
+celery==3.1.23
+lxml
+xhtml2pdf
+djangorestframework
+dateutil

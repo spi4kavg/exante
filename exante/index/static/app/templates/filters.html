@@ -1,0 +1,45 @@
+<div class="mdl-grid--no-spacing">
+    <form action="#" class="filter-form mdl-grid mdl-cell--4-col-desktop mdl-cell--4-offset-desktop">
+
+        <p><b>Выберите параметры для получения дайджеста новостей</b></p>
+
+        <div id="category-filter" class="block">
+            <select name="categories" multiple="multiple">
+                <% _.each(categories, function (v, k) { %>
+                    <option value="<%= v.get('id') %>"><%= v.get('name') %></option>
+                <% }); %>
+            </select>
+        </div>
+        <div id="date-start" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label block">
+            <input class="mdl-textfield__input" placeholder="Дата начала" type="text" pattern="-?[0-9]{4}-[0-9]{2}-[0-9]{2}?" name="date_start" id="date_start">
+            <span class="mdl-textfield__error">Формат даты не верет</span>
+        </div>
+        <div id="date-end" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label block">
+            <input class="mdl-textfield__input" placeholder="Дата конца" type="text" pattern="-?[0-9]{4}-[0-9]{2}-[0-9]{2}?" name="date_end" id="date_end">
+            <span class="mdl-textfield__error">Формат даты не верет</span>
+        </div>
+        <div id="email" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label block">
+            <input class="mdl-textfield__input" type="text" pattern="-?^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/?" name="email" id="email">
+            <label class="mdl-textfield__label" for="email">Ваш почтовый ящик</label>
+            <span class="mdl-textfield__error">Формат email не верет</span>
+        </div>
+        <span class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect block" id="send-button">
+            Подготовить дайджест
+        </span>
+    </form>
+</div>
+
+<div id="form-error-snackbar" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+</div>
+
+<dialog class="mdl-dialog">
+    <h4>Получаем дайджест...</h4>
+    <div class="mdl-dialog__content">
+    </div>
+    <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+        <button type="button" class="mdl-button refresh">Ещё раз</button>
+        <a href="!/" class="mdl-button close">Вернуться на главную</a>
+    </div>
+</dialog>

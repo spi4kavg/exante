@@ -1,0 +1,7 @@
+*.pyc
+venv/
+exante/db.sqlite3
+exante/celerybeat-schedule
+exante/index/static/.sass-cache
+exante/index/static/bower_components
+exante/index/static/node_modules
