@@ -23,7 +23,6 @@ define([
             '/': 'homePage',
             '!/': 'homePage',
 			'!/filter': 'filterPage',
-            // '!/digest': 'sendDigest',
 		},
 
 		initialize: function () {
@@ -48,31 +47,5 @@ define([
 
             categoryCollection.fetch({reset: true});
         }
-
-        // sendDigest: function (categories, date_start, date_end, email) {
-        //     var digestModel = new DigestModel(),
-        //         digestView = new DigestView({
-        //             'model': digestModel
-        //         });
-
-        //     this.$container.html(digestView.render().el);
-
-        //     digestModel.save({}, {
-        //         data: {
-        //             "categories": categories.split(","),
-        //             "date_start": date_start,
-        //             "date_end": date_end,
-        //             "email": email
-        //         },
-        //         // type: 'POST',
-        //         // emulateJSON: true,
-        //         processData: true,
-        //         // traditional: true
-        //     });
-        //     c = categories;
-        //     ds = date_start;
-        //     de = date_end;
-        //     e = email;
-        // }
 	});
 });
